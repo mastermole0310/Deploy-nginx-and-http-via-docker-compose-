@@ -1,0 +1,19 @@
+web:
+  image: nginx
+  volumes:
+   - ./templates:/etc/nginx/templates
+  ports:
+   - "8081:80"
+  environment:
+   - NGINX_HOST=foobar.com
+   - NGINX_PORT=80
+
+web1:
+   image: httpd
+   volumes:
+   - ./templates:/etc/httpd/templates
+   ports:
+   - "8082:80"
+   environment:
+   - HTTPD_HOST=foobar.com
+   - HTTPD_PORT=80
