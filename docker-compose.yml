@@ -1,0 +1,14 @@
+web:
+  image: nginx
+  volumes:
+   - ./templates:/etc/nginx/templates
+  ports:
+   - "8081:80"
+
+web1:
+   image: httpd
+   volumes:
+   - ./templates:/etc/httpd/templates
+   ports:
+   - "8082:80"
+   
